@@ -1,0 +1,53 @@
+.mainBlock {
+    display: flex;
+    align-items: stretch;
+    height: 80svh;
+    width: 80%;
+    margin: 15px auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.channelsBlock {
+    padding: 20px 10px;
+    border-right: 1px solid var(--border);
+    background-color: var(--accent-bg);
+    flex: 0 1 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden;
+}
+
+.chatSection {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.plusButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 0;
+    padding: 3px 9px 4px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.plusButton:hover {
+    background-color: rgba(204, 182, 247, 0.523);
+}
+
+.plusButton:active {
+  transform: scale(0.95);
+}
+

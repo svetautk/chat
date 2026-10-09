@@ -1,0 +1,12 @@
+.chatHeader {
+    flex: 0;
+    background-color: var(--accent-bg);
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    box-shadow:  rgba(0, 0, 0, 0.1) 0 10px 10px -5px, rgba(0, 0, 0, 0.05) 0 4px 6px -3px;
+}
+
+.h3 {
+    margin-bottom: 3px;
+    font-size: 18px;
+}
