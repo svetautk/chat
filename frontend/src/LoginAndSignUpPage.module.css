@@ -1,0 +1,94 @@
+.box {
+    margin: auto;
+    width: 100%;
+    max-width: 650px;
+    max-height: 400px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+}
+
+.mainImage {
+    max-width: 150px;
+}
+
+@media (max-width: 768px) {
+    .mainImage {
+        display: none;
+    }
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+}
+
+.form {
+    flex: 2;
+    padding: 10px 10px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin: 0 auto 25px;
+}
+
+.textInputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.inputLabel {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input {
+    width: 96%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 7px;
+    font-family: var(--sans);
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.inputError {
+    color: rgb(238, 12, 12);
+    font-size: 12px;
+}
+
+.submitButton {
+    width: 96%;
+    margin: 20px 0 15px;
+    background-color: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--accent-border);
+    cursor: pointer;
+    padding: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submitButton:active {
+  transform: scale(0.95);
+}
+
+.signUpParagraf {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.signUpLink {
+    text-decoration: none;
+}

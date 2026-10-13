@@ -6,7 +6,7 @@ import axios from 'axios'
 import styles from './ModalWindow.module.css'
 
 export default function ModalRenameChannelWindow() {
-    const token = useAppStore(state => state.userData.token)
+    const token = useAppStore(state => state.userData?.token)
     const activeChannel = useAppStore(state => state.activeChannel)
     const setActiveChannel = useAppStore(state => state.setActiveChannel)
     const setActiveModal = useAppStore(state => state.setActiveModal)
@@ -23,7 +23,7 @@ export default function ModalRenameChannelWindow() {
         initialValues: { name: '', },
         validate: {
             name: (value) => ( (value.trim().length < 3 || value.trim().length > 20) ?
-            'Must be between 3 and 20 characters long' : null
+            'От 3 до 20 символов' : null
             )
         },
         transformValues: (value) => ({
@@ -55,14 +55,24 @@ export default function ModalRenameChannelWindow() {
     return (
         <div className={styles.modalContainer}>
             <form onSubmit={form.onSubmit(handleSubmit)}>
-                <h3>Do you want to rename '{activeChannel.name}'?</h3>
-                <TextInput 
-                    {...form.getInputProps('name')} 
-                    label="New name of channel" 
+                <div className={styles.modalHead}>
+                    <h3 className={styles.modalHeader}>Переименовать канал?</h3>
+                    <button onClick={handleCancel} className={styles.closeButton}>
+                        <img src="../dist/close.png" className={styles.closeButtonIcon}/>
+                    </button>
+                </div>
+                <TextInput {...form.getInputProps('name')} classNames={
+                        {
+                            label: styles.inputLabel, 
+                            input: styles.input, 
+                            error: styles.inputError 
+                        }
+                    }
+                    label="Имя канала" 
                 />
-                <div>
-                    <Button type="submit">Send</Button>
-                    <Button onClick={handleCancel}>Cancel</Button>
+                <div className={styles.flexButtonContainer}>
+                    <button onClick={handleCancel} className={styles.button}>Отменить</button>
+                    <button type="submit" className={styles.sendButton}>Отправить</button>
                 </div>
             </form>
         </div>

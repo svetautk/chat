@@ -1,8 +1,9 @@
-import { Button, TextInput } from '@mantine/core'
+import { TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import axios from 'axios'
-import { useNavigate } from 'react-router'
+import { useNavigate, Link } from 'react-router'
 import useAppStore from './store'
+import styles from './LoginAndSignUpPage.module.css'
 
 function LoginPage() {
     const navigate = useNavigate()
@@ -20,21 +21,56 @@ function LoginPage() {
             navigate('/')
         }
         catch (error) {
-            if (axios.isAxiosError(error) && error.response.status === 401) {
+            if (axios.isAxiosError(error) && error.response?.status === 401) {
                 form.setFieldError('password', 'Неверные имя пользователя или пароль')
             }
         }
     }
 
     return (
-        <form onSubmit={form.onSubmit(handleSubmit)}>
-            <h1>Войти</h1>
-            <TextInput {...form.getInputProps('username')} label="Ваш ник" />
-            <TextInput {...form.getInputProps('password')} label="Пароль" type="password" />
-            <Button type="submit">
-                Войти
-            </Button>
-        </form>
+        <div className={styles.box}>
+            <div className={styles.flexContainer}>
+                <div>
+                    <img src='../dist/mainImage.png' className={styles.mainImage}/>
+                </div>
+                <form onSubmit={form.onSubmit(handleSubmit)} className={styles.form}>
+                    <h1 className={styles.header}>Войти</h1>
+                    <div className={styles.textInputWrapper}> 
+                        <TextInput {...form.getInputProps('username')} label="Ваш ник" required
+                            classNames={
+                                        {
+                                            label: styles.inputLabel, 
+                                            input: styles.input, 
+                                            error: styles.inputError 
+                                        }
+                                    }
+                        />
+                        <TextInput {...form.getInputProps('password')} label="Пароль" required
+                            type="password" classNames={
+                                            {
+                                                label: styles.inputLabel, 
+                                                input: styles.input, 
+                                                error: styles.inputError 
+                                            }
+                                        }
+                        />
+                    </div> 
+                    <div>  {/* не получается сделать одинаковую ширину кнопки и инпута */}
+                        <button type="submit" className={styles.submitButton}>
+                            Войти
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+            <div>
+                <p className={styles.signUpParagraf}>Нет аккаунта? &nbsp;
+                    <Link to='/signup' className={styles.signUpLink}>
+                        Регистрация
+                    </Link>
+                </p>
+            </div>
+        </div>
     )
 }
 

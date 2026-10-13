@@ -5,7 +5,7 @@ import axios from 'axios'
 import styles from './ModalWindow.module.css'
 
 export default function ModalDeleteChannelWindow() {
-    const token = useAppStore(state => state.userData.token)
+    const token = useAppStore(state => state.userData?.token)
     const setActiveModal = useAppStore(state => state.setActiveModal)
     const activeChannel = useAppStore(state => state.activeChannel)
     const setActiveChannel = useAppStore(state => state.setActiveChannel)
@@ -43,10 +43,16 @@ export default function ModalDeleteChannelWindow() {
 
     return (
         <div className={styles.modalContainer}>
-            <h3>Do you want to delete '{activeChannel.name}'?</h3>
-            <div>
-                <button onClick={handleSubmit}>Delete</button> 
-                <button onClick={handleCancel}>Cancel</button>  
+            <div className={styles.modalHead}>
+                <h3 className={styles.modalHeader}>Удалить канал?</h3>
+                <button onClick={handleCancel} className={styles.closeButton}>
+                    <img src="../dist/close.png" className={styles.closeButtonIcon}/>
+                </button>
+            </div>
+            <p className={styles.inputLabel}>Уверены?</p>
+            <div className={styles.flexButtonContainer}>
+                <button onClick={handleCancel} className={styles.button}>Отменить</button>  
+                <button onClick={handleSubmit} className={styles.deleteButton}>Удалить</button> 
             </div>
         </div>
     )

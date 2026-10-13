@@ -11,5 +11,99 @@
 }
 
 .modalContainer {
-    background-color: #f9f7fb;
+    background-color: #fefcff;
+    width: 100%;
+    max-width: 400px;
+    max-height: 200px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+}
+
+.modalHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modalHeader {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.closeButtonIcon {
+    width: 10px;
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 5px 7px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.closeButton:active {
+  transform: scale(0.95);
+}
+
+.inputLabel {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input {
+    width: 96%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 7px;
+    font-family: var(--sans);
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.inputError {
+    color: rgb(238, 12, 12);
+    font-size: 12px;
+}
+
+.flexButtonContainer {
+    margin-top: 13px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.sendButton {
+    composes: button;
+    background-color: rgba(215, 165, 250, 0.13);
+}
+
+.deleteButton {
+    composes: button;
+    background-color: rgba(244, 123, 123, 0.516);
+}
+
+.button:active {
+  transform: scale(0.95);
 }

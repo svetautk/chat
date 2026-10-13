@@ -44,10 +44,14 @@ export default function ActiveChannel( {item} ) {
         if (item.removable && isMenuOpen) {
             return (<ul ref={menuRef} className={styles.dropDownMenu}>
                         <li>
-                            <button onClick={openModalDeleteChannel}>Delete</button>
+                            <button onClick={openModalDeleteChannel} className={styles.menuItem}>
+                                Delete
+                            </button>
                         </li>
                         <li>
-                            <button onClick={openModalRenameChannel}>Rename</button>
+                            <button onClick={openModalRenameChannel} className={styles.menuItem}>
+                                Rename
+                            </button>
                         </li>
                     </ul>)
         }
@@ -60,7 +64,7 @@ export default function ActiveChannel( {item} ) {
                     <p className={styles.channelName}># {item.name}</p>
                     {renderButton()}
                 </div>
-                <div className={styles.container}>
+                <div className={styles.menuContainer}>
                     {renderDropDownMenu()}
                 </div>
             </li>

@@ -5,8 +5,8 @@ import useAppStore from './store'
 import styles from './MessageForm.module.css'
 
 export default function MessageForm() {
-    const userName = useAppStore(state => state.userData.username)
-    const token = useAppStore(state => state.userData.token)
+    const userName = useAppStore(state => state.userData?.username)
+    const token = useAppStore(state => state.userData?.token)
     const channelId = useAppStore(state => state.activeChannel.id)
 
     const form = useForm({

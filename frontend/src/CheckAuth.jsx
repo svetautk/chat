@@ -6,7 +6,7 @@ function CheckAuth() {
     const appStore = JSON.parse(localStorage.getItem('appStore'))
 
     return (
-        appStore && appStore.state.userData.token ? <ChatPage/> : <Navigate to='/login'/>
+        appStore && appStore?.state?.userData?.token ? <ChatPage/> : <Navigate to='/login'/>
     ) 
 }
 

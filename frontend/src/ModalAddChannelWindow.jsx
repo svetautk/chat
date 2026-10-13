@@ -1,4 +1,4 @@
-import { Button, TextInput } from "@mantine/core";
+import { TextInput } from "@mantine/core";
 import { useForm } from '@mantine/form'
 import { useQuery } from '@tanstack/react-query'
 import useAppStore from './store'
@@ -6,7 +6,7 @@ import axios from 'axios'
 import styles from './ModalWindow.module.css'
 
 export default function ModalAddChannelWindow() {
-    const token = useAppStore(state => state.userData.token)
+    const token = useAppStore(state => state.userData?.token)
     const setActiveChannel = useAppStore(state => state.setActiveChannel)
     const setActiveModal = useAppStore(state => state.setActiveModal)
 
@@ -22,7 +22,7 @@ export default function ModalAddChannelWindow() {
         initialValues: { name: '', },
         validate: {
             name: (value) => ( (value.trim().length < 3 || value.trim().length > 20) ?
-            'Must be between 3 and 20 characters long' : null
+            'От 3 до 20 символов' : null
             )
         },
         transformValues: (value) => ({
@@ -55,14 +55,24 @@ export default function ModalAddChannelWindow() {
     return (
         <div className={styles.modalContainer}>
             <form onSubmit={form.onSubmit(handleSubmit)}>
-                <h3>Add Channel</h3>
-                <TextInput 
-                    {...form.getInputProps('name')} 
-                    label="Name of channel" 
+                <div className={styles.modalHead}>
+                    <h3 className={styles.modalHeader}>Добавить канал?</h3>
+                    <button onClick={handleCancel} className={styles.closeButton}>
+                        <img src="../dist/close.png" className={styles.closeButtonIcon}/>
+                    </button>
+                </div>
+                <TextInput {...form.getInputProps('name')} classNames={
+                        {
+                            label: styles.inputLabel, 
+                            input: styles.input, 
+                            error: styles.inputError 
+                        }
+                    }
+                    label="Имя канала" 
                 />
-                <div>
-                    <Button type="submit">Send</Button>
-                    <Button onClick={handleCancel}>Cancel</Button>
+                <div className={styles.flexButtonContainer}>
+                    <button onClick={handleCancel} className={styles.button}>Отменить</button>
+                    <button type="submit" className={styles.sendButton}>Отправить</button>
                 </div>
             </form>
         </div>

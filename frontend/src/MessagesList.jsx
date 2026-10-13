@@ -6,7 +6,7 @@ import { socket } from './socket.js'
 import styles from './MessagesList.module.css'
 
 export default function MessagesList() {
-    const token = useAppStore(state => state.userData.token)
+    const token = useAppStore(state => state.userData?.token)
     const activeChannel = useAppStore(state => state.activeChannel)
     const queryClient = useQueryClient()
     const chatRef = useRef(null)

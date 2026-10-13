@@ -7,7 +7,7 @@ import { socket } from './socket.js'
 import ActiveChannel from './ActiveChannel.jsx'
 
 function Channels() {
-    const token = useAppStore(state => state.userData.token)
+    const token = useAppStore(state => state.userData?.token)
     const activeChannel = useAppStore(state => state.activeChannel)
     const setActiveChannel = useAppStore(state => state.setActiveChannel)
     const queryClient = useQueryClient()

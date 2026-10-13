@@ -1,7 +1,33 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 5px 50px;
+    padding: 15px 50px;
     border-bottom: 2px solid var(--border);
     color: var(--text-h);
+}
+
+.mainPageLink {
+    color: var(--text-h);
+    font-size: 24px;
+    font-family: var(--heading);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.logOutButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.logOutButton:active {
+  transform: scale(0.95);
 }
