@@ -31,7 +31,7 @@ function LoginPage() {
         <div className={styles.box}>
             <div className={styles.flexContainer}>
                 <div>
-                    <img src='../public/mainImage.png' className={styles.mainImage}/>
+                    <img src='/mainImage.png' className={styles.mainImage}/>
                 </div>
                 <form onSubmit={form.onSubmit(handleSubmit)} className={styles.form}>
                     <h1 className={styles.header}>Войти</h1>

@@ -57,7 +57,7 @@ export default function ModalAddChannelWindow() {
                 <div className={styles.modalHead}>
                     <h3 className={styles.modalHeader}>Добавить канал?</h3>
                     <button type="button" onClick={handleCancel} className={styles.closeButton}>
-                        <img src="../public/close.png" className={styles.closeButtonIcon}/>
+                        <img src="/close.png" className={styles.closeButtonIcon}/>
                     </button>
                 </div>
                 <TextInput {...form.getInputProps('name')} classNames={

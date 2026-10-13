@@ -58,7 +58,7 @@ export default function ModalRenameChannelWindow() {
                 <div className={styles.modalHead}>
                     <h3 className={styles.modalHeader}>Переименовать канал?</h3>
                     <button type="button" onClick={handleCancel} className={styles.closeButton}>
-                        <img src="../public/close.png" className={styles.closeButtonIcon}/>
+                        <img src="/close.png" className={styles.closeButtonIcon}/>
                     </button>
                 </div>
                 <TextInput {...form.getInputProps('name')} classNames={
