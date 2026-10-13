@@ -35,7 +35,7 @@ export default function MessageForm() {
             <textarea {...form.getInputProps('message')} placeholder="Введите сообщение..." 
                 required rows="1" className={styles.textarea}/>
             <Button type="submit" className={styles.button} aria-label='Отправить'>
-                <img src='../dist/icon_sending_message.png' className={styles.img}/>
+                <img src='../public/icon_sending_message.png' className={styles.img}/>
             </Button>
         </form>
     )

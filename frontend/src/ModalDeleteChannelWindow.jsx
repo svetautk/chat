@@ -46,7 +46,7 @@ export default function ModalDeleteChannelWindow() {
             <div className={styles.modalHead}>
                 <h3 className={styles.modalHeader}>Удалить канал?</h3>
                 <button onClick={handleCancel} className={styles.closeButton}>
-                    <img src="../dist/close.png" className={styles.closeButtonIcon}/>
+                    <img src="../public/close.png" className={styles.closeButtonIcon}/>
                 </button>
             </div>
             <p className={styles.inputLabel}>Уверены?</p>

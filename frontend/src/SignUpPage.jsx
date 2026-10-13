@@ -49,7 +49,7 @@ export default function SignUpPage () {
         <div className={styles.box}>
             <div className={styles.flexContainer}>
                 <div>
-                    <img src='../dist/mainImage.png' className={styles.mainImage}/>
+                    <img src='../public/mainImage.png' className={styles.mainImage}/>
                 </div>
                 <form onSubmit={form.onSubmit(handleSubmit)} className={styles.form}>
                     <h1 className={styles.header}>Регистрация</h1>

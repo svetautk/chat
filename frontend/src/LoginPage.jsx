@@ -31,7 +31,7 @@ function LoginPage() {
         <div className={styles.box}>
             <div className={styles.flexContainer}>
                 <div>
-                    <img src='../dist/mainImage.png' className={styles.mainImage}/>
+                    <img src='../public/mainImage.png' className={styles.mainImage}/>
                 </div>
                 <form onSubmit={form.onSubmit(handleSubmit)} className={styles.form}>
                     <h1 className={styles.header}>Войти</h1>
@@ -54,13 +54,10 @@ function LoginPage() {
                                             }
                                         }
                         />
-                    </div> 
-                    <div>  {/* не получается сделать одинаковую ширину кнопки и инпута */}
                         <button type="submit" className={styles.submitButton}>
                             Войти
                         </button>
-                    </div>
-                    
+                    </div> 
                 </form>
             </div>
             <div>

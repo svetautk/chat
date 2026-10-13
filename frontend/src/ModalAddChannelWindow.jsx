@@ -33,8 +33,7 @@ export default function ModalAddChannelWindow() {
     const handleCancel = () => setActiveModal(null)
 
     const handleSubmit = async (value) => {
-        if (!channels) return
-        const channelExist = channels.find(item => item.name.toLowerCase() === value.name.toLowerCase())
+        const channelExist = channels?.find(item => item.name.toLowerCase() === value.name.toLowerCase())
         if (channelExist) {
             form.setFieldError('name', 'Такой канал уже существует')
             return
@@ -57,8 +56,8 @@ export default function ModalAddChannelWindow() {
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <div className={styles.modalHead}>
                     <h3 className={styles.modalHeader}>Добавить канал?</h3>
-                    <button onClick={handleCancel} className={styles.closeButton}>
-                        <img src="../dist/close.png" className={styles.closeButtonIcon}/>
+                    <button type="button" onClick={handleCancel} className={styles.closeButton}>
+                        <img src="../public/close.png" className={styles.closeButtonIcon}/>
                     </button>
                 </div>
                 <TextInput {...form.getInputProps('name')} classNames={
@@ -71,7 +70,7 @@ export default function ModalAddChannelWindow() {
                     label="Имя канала" 
                 />
                 <div className={styles.flexButtonContainer}>
-                    <button onClick={handleCancel} className={styles.button}>Отменить</button>
+                    <button type="button" onClick={handleCancel} className={styles.button}>Отменить</button>
                     <button type="submit" className={styles.sendButton}>Отправить</button>
                 </div>
             </form>

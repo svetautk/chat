@@ -21,7 +21,7 @@ export default function Layout() {
         <>
             <header className={styles.header}>
                 <div>
-                    <NavLink to='/' className={styles.mainPageLink}>Hexlet chat</NavLink>
+                    <NavLink to='/' className={styles.mainPageLink}>Chat</NavLink>
                 </div>
                 <div>
                     { token ? 
