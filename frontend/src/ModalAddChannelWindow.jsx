@@ -60,7 +60,8 @@ export default function ModalAddChannelWindow() {
                         <img src="/close.png" className={styles.closeButtonIcon}/>
                     </button>
                 </div>
-                <TextInput {...form.getInputProps('name')} classNames={
+                <TextInput {...form.getInputProps('name')} autoFocus
+                    classNames={
                         {
                             label: styles.inputLabel, 
                             input: styles.input, 

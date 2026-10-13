@@ -61,14 +61,15 @@ export default function ModalRenameChannelWindow() {
                         <img src="/close.png" className={styles.closeButtonIcon}/>
                     </button>
                 </div>
-                <TextInput {...form.getInputProps('name')} classNames={
+                <TextInput {...form.getInputProps('name')} autoFocus
+                    classNames={
                         {
                             label: styles.inputLabel, 
                             input: styles.input, 
                             error: styles.inputError 
                         }
                     }
-                    label="Имя канала" 
+                    label="Новое имя канала" 
                 />
                 <div className={styles.flexButtonContainer}>
                     <button type="button" onClick={handleCancel} className={styles.button}>Отменить</button>

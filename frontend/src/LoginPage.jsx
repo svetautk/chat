@@ -2,12 +2,20 @@ import { TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router'
+import { useRef, useEffect } from 'react'
 import useAppStore from './store'
 import styles from './LoginAndSignUpPage.module.css'
 
 function LoginPage() {
     const navigate = useNavigate()
     const addUserData = useAppStore((state) => state.addUserData)
+    const inputRef = useRef(null)
+
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus()
+        }
+    }, [])
 
     const form = useForm({
         mode: 'controlled',
@@ -37,7 +45,7 @@ function LoginPage() {
                     <h1 className={styles.header}>Войти</h1>
                     <div className={styles.textInputWrapper}> 
                         <TextInput {...form.getInputProps('username')} label="Ваш ник" required
-                            classNames={
+                            ref={inputRef} classNames={
                                         {
                                             label: styles.inputLabel, 
                                             input: styles.input, 

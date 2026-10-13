@@ -7,6 +7,7 @@ function CheckAuth() {
 
     return (
         appStore && appStore?.state?.userData?.token ? <ChatPage/> : <Navigate to='/login'/>
+        /* есть ситуация когда в сторе лежит устаревший токен */
     ) 
 }
 
