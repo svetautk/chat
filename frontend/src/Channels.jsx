@@ -58,7 +58,7 @@ function Channels() {
 
     const renderList = (array) => {
         return (array.map((item) => {
-                    if (item.id === activeChannel.id) {
+                    if (item.id === activeChannel?.id) {
                         return <ActiveChannel key={item.id} item={item}/>
                     } 
                     return (
@@ -72,7 +72,8 @@ function Channels() {
 
     const handleChangeChannel = (event) => {
         const targetLi = event.target.closest(`.${styles.channelItem}`)
-        const targetChannelId = targetLi?.id
+        if (!targetLi) return
+        const targetChannelId = targetLi.id
         const newActiveChanel = data.find(item => item.id === targetChannelId)
         setActiveChannel(newActiveChanel)
     }
