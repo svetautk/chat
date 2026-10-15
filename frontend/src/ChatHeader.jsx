@@ -18,7 +18,9 @@ export default function ChatHeader() {
     useEffect(() => { // проверить надо ли это все
         if (!activeChannel || channels.length === 0) return
         const channelExist = channels.find(item => item.id === activeChannel.id)
-        if (!channelExist) { setActiveChannel(channels[0])}
+        if (!channelExist) { 
+            setActiveChannel(channels[0])
+        }
     }, [channels, activeChannel])
 
     return (

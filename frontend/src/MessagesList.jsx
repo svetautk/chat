@@ -30,7 +30,7 @@ export default function MessagesList() {
     })
 
     const renderMessages = (array) => {
-        const actualMessages = array.filter(item => item.channelId === activeChannel.id)
+        const actualMessages = array.filter(item => item.channelId === activeChannel?.id)
         return actualMessages.map((item) => (
             <li key={item.id} id={item.id} className={styles.li}>
                 <pre className={styles.pre}><b>{item.username}</b>: {item.body.message}</pre>

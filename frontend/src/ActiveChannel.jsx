@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { useTranslation } from "react-i18next"
 import useAppStore from './store'
 import styles from './Channels.module.css'
 
@@ -7,6 +8,7 @@ export default function ActiveChannel( {item} ) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const menuRef = useRef(null)
     const buttonRef = useRef(null)
+    const { t } = useTranslation()
 
     const toggleDropDownMenu = () => setIsMenuOpen(!isMenuOpen)
     const openModalDeleteChannel = () => setActiveModal('deleteChannelModalWindow')
@@ -44,13 +46,13 @@ export default function ActiveChannel( {item} ) {
         if (item.removable && isMenuOpen) {
             return (<ul ref={menuRef} className={styles.dropDownMenu}>
                         <li>
-                            <button onClick={openModalDeleteChannel} className={styles.menuItem}>
-                                Delete
+                            <button onClick={openModalRenameChannel} className={styles.menuItem}>
+                                {t('chatPage.activeChannelMenu.renameButton')}
                             </button>
                         </li>
                         <li>
-                            <button onClick={openModalRenameChannel} className={styles.menuItem}>
-                                Rename
+                            <button onClick={openModalDeleteChannel} className={styles.menuItem}>
+                                {t('chatPage.activeChannelMenu.removeButton')}
                             </button>
                         </li>
                     </ul>)

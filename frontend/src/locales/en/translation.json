@@ -1,0 +1,77 @@
+{
+    "layout": {
+            "logOutButton": "Log out"
+        },
+
+    "loginPage": {
+        "formHeader": "Log in",
+        "usernameInputLabel": "Your username",
+        "passwordInputLabel": "Password",
+        "submitButton": "Log in",
+        "notHaveAccount": "Don't have an account?",
+        "registrationLink": "Registration",
+        "mistake": "Invalid user name or password"
+    },
+
+    "signUpPage": {
+        "formHeader": "Create account",
+        "usernameInputLabel": "Your username",
+        "passwordInputLabel": "Password",
+        "repeatPassword": "Confirm password",
+        "submitButton": "Sign up",
+        "haveAccount": "Already have an account?",
+        "logInlink": "Log in",
+        "mistake": {
+            "minMaxLength": "Must be between 3 and 20 characters",
+            "minPasswordLength": "Must be at least 6 characters long",
+            "notSamePassword": "Passwords do not match",
+            "accountExist": "This username is already taken",
+            "smthWrong": "Something went wrong"
+        }
+    },
+
+    "chatPage": {
+        "channels": "Channels",
+        "numberOfMessages": {
+            "key_one": "{{ count }} message",
+            "key_other": "{{ count }} messages"
+        },
+        "writeMessage": "Enter your message...",
+        "sendMessageButton": "Send",
+        "activeChannelMenu": {
+            "removeButton": "Remove",
+            "renameButton": "Rename"
+        }
+    },
+
+    "addChannelModal": {
+        "header": "Add channel?",
+        "nameInput": "Channel name",
+        "cancelButton": "Cancel",
+        "submitButton": "Submit",
+        "mistake": {
+            "minMaxLength": "Must be between 3 and 20 characters",
+            "alreadyExist": "This channel already exists",
+            "smthWrong": "Something went wrong"
+        }
+    },
+
+    "removeChannelModal": {
+        "header": "Remove channel?",
+        "sure": "Are you sure?",
+        "cancelButton": "Cancel",
+        "submitButton": "Remove"
+    },
+
+    "renameChannelModal": {
+        "header": "Rename channel?",
+        "nameInput": "New channel name",
+        "cancelButton": "Cancel",
+        "submitButton": "Submit",
+        "mistake": {
+            "minMaxLength": "Must be between 3 and 20 characters",
+            "alreadyExist": "This channel already exists",
+            "smthWrong": "Something went wrong"
+        }
+    }
+}

@@ -2,6 +2,7 @@ import useAppStore from './store'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { useTranslation } from "react-i18next"
 import styles from './ModalWindow.module.css'
 
 export default function ModalDeleteChannelWindow() {
@@ -9,6 +10,7 @@ export default function ModalDeleteChannelWindow() {
     const setActiveModal = useAppStore(state => state.setActiveModal)
     const activeChannel = useAppStore(state => state.activeChannel)
     const setActiveChannel = useAppStore(state => state.setActiveChannel)
+    const { t } = useTranslation()
 
     const { data: channels } = useQuery({
         queryKey: ['channelsArray'],
@@ -44,15 +46,15 @@ export default function ModalDeleteChannelWindow() {
     return (
         <div className={styles.modalContainer}>
             <div className={styles.modalHead}>
-                <h3 className={styles.modalHeader}>Удалить канал?</h3>
+                <h3 className={styles.modalHeader}>{t('removeChannelModal.header')}</h3>
                 <button onClick={handleCancel} className={styles.closeButton}>
                     <img src="/close.png" className={styles.closeButtonIcon}/>
                 </button>
             </div>
-            <p className={styles.inputLabel}>Уверены?</p>
+            <p className={styles.inputLabel}>{t('removeChannelModal.sure')}</p>
             <div className={styles.flexButtonContainer}>
-                <button onClick={handleCancel} className={styles.button}>Отменить</button>  
-                <button onClick={handleSubmit} className={styles.deleteButton}>Удалить</button> 
+                <button onClick={handleCancel} className={styles.button}>{t('removeChannelModal.cancelButton')}</button>  
+                <button onClick={handleSubmit} className={styles.deleteButton}>{t('removeChannelModal.submitButton')}</button> 
             </div>
         </div>
     )

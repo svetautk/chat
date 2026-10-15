@@ -1,0 +1,82 @@
+
+{
+    "layout": {
+            "logOutButton": "Выйти"
+        },
+
+    "loginPage": {
+        "formHeader": "Войти",
+        "usernameInputLabel": "Ваш ник",
+        "passwordInputLabel": "Пароль",
+        "submitButton": "Войти",
+        "notHaveAccount": "Нет аккаунта?",
+        "registrationLink": "Регистрация",
+        "mistake": "Неверные имя пользователя или пароль"
+    },
+
+    "signUpPage": {
+        "formHeader": "Создать аккаунт",
+        "usernameInputLabel": "Ваш ник",
+        "passwordInputLabel": "Пароль",
+        "repeatPassword": "Подтвердите пароль",
+        "submitButton": "Зарегистрироваться",
+        "haveAccount": "Уже есть аккаунт?",
+        "logInlink": "Войти",
+        "mistake": {
+            "minMaxLength": "Длина должна быть от 3 до 20 символов",
+            "minPasswordLength": "Длина не меньше 6 символов",
+            "notSamePassword": "Пароли не совпадают",
+            "accountExist": "Такой ник уже занят",
+            "smthWrong": "Что-то пошло не так..."
+        }
+    },
+
+    "chatPage": {
+        "channels": "Каналы",
+        "numberOfMessages": {
+            "key_zero": "{{ count }} сообщений",
+            "key_one": "{{ count }} сообщение",
+            "key_two": "{{ count }} сообщения",
+            "key_few": "{{ count }} сообщения",
+            "key_many": "{{ count }} сообщений",
+            "key_other": "{{ count }} сообщений"
+        },
+        "writeMessage": "Введите сообщение...",
+        "sendMessageButton": "Отправить",
+        "activeChannelMenu": {
+            "removeButton": "Удалить",
+            "renameButton": "Переименовать"
+        }
+    },
+
+    "addChannelModal": {
+        "header": "Добавить канал?",
+        "nameInput": "Имя канала",
+        "cancelButton": "Отменить",
+        "submitButton": "Подтвердить",
+        "mistake": {
+            "minMaxLength": "Длина должна быть от 3 до 20 символов",
+            "alreadyExist": "Канал с таким именем уже существует",
+            "smthWrong": "Что-то пошло не так..."
+        }
+    },
+
+    "removeChannelModal": {
+        "header": "Удалить канал?",
+        "sure": "Вы уверены?",
+        "cancelButton": "Отменить",
+        "submitButton": "Удалить"
+    },
+
+    "renameChannelModal": {
+        "header": "Переименовать канал?",
+        "nameInput": "Новое имя канала",
+        "cancelButton": "Отменить",
+        "submitButton": "Подтвердить",
+        "mistake": {
+            "minMaxLength": "Длина должна быть от 3 до 20 символов",
+            "alreadyExist": "Канал с таким именем уже существует",
+            "smthWrong": "Что-то пошло не так..."
+        }
+    }  
+}

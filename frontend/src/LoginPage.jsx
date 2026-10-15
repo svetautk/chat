@@ -3,6 +3,7 @@ import { useForm } from '@mantine/form'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router'
 import { useRef, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import useAppStore from './store'
 import styles from './LoginAndSignUpPage.module.css'
 
@@ -10,6 +11,7 @@ function LoginPage() {
     const navigate = useNavigate()
     const addUserData = useAppStore((state) => state.addUserData)
     const inputRef = useRef(null)
+    const { t } = useTranslation()
 
     useEffect(() => {
         if (inputRef.current) {
@@ -30,7 +32,7 @@ function LoginPage() {
         }
         catch (error) {
             if (axios.isAxiosError(error) && error.response?.status === 401) {
-                form.setFieldError('password', 'Неверные имя пользователя или пароль')
+                form.setFieldError('password', t('loginPage.mistake'))
             }
         }
     }
@@ -42,10 +44,10 @@ function LoginPage() {
                     <img src='/mainImage.png' className={styles.mainImage}/>
                 </div>
                 <form onSubmit={form.onSubmit(handleSubmit)} className={styles.form}>
-                    <h1 className={styles.header}>Войти</h1>
+                    <h1 className={styles.header}>{t('loginPage.formHeader')}</h1>
                     <div className={styles.textInputWrapper}> 
-                        <TextInput {...form.getInputProps('username')} label="Ваш ник" required
-                            ref={inputRef} classNames={
+                        <TextInput {...form.getInputProps('username')} label={t('loginPage.usernameInputLabel')}
+                            required ref={inputRef} classNames={
                                         {
                                             label: styles.inputLabel, 
                                             input: styles.input, 
@@ -53,7 +55,7 @@ function LoginPage() {
                                         }
                                     }
                         />
-                        <TextInput {...form.getInputProps('password')} label="Пароль" required
+                        <TextInput {...form.getInputProps('password')} label={t('loginPage.passwordInputLabel')} required
                             type="password" classNames={
                                             {
                                                 label: styles.inputLabel, 
@@ -63,15 +65,15 @@ function LoginPage() {
                                         }
                         />
                         <button type="submit" className={styles.submitButton}>
-                            Войти
+                            {t('loginPage.submitButton')}
                         </button>
                     </div> 
                 </form>
             </div>
             <div>
-                <p className={styles.signUpParagraf}>Нет аккаунта? &nbsp;
+                <p className={styles.signUpParagraf}>{t('loginPage.notHaveAccount')}&nbsp;
                     <Link to='/signup' className={styles.signUpLink}>
-                        Регистрация
+                        {t('loginPage.registrationLink')}
                     </Link>
                 </p>
             </div>

@@ -3,6 +3,7 @@ import { useForm } from '@mantine/form'
 import useAppStore from './store'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import { useTranslation } from "react-i18next"
 import styles from './ModalWindow.module.css'
 
 export default function ModalRenameChannelWindow() {
@@ -10,6 +11,7 @@ export default function ModalRenameChannelWindow() {
     const activeChannel = useAppStore(state => state.activeChannel)
     const setActiveChannel = useAppStore(state => state.setActiveChannel)
     const setActiveModal = useAppStore(state => state.setActiveModal)
+    const { t } = useTranslation()
 
     const { data: channels } = useQuery({
         queryKey: ['channelsArray'],
@@ -23,7 +25,7 @@ export default function ModalRenameChannelWindow() {
         initialValues: { name: '', },
         validate: {
             name: (value) => ( (value.trim().length < 3 || value.trim().length > 20) ?
-            'От 3 до 20 символов' : null
+            t('renameChannelModal.mistake.minMaxLength') : null
             )
         },
         transformValues: (value) => ({
@@ -37,7 +39,7 @@ export default function ModalRenameChannelWindow() {
         if (!channels || !activeChannel) return
         const channelExist = channels.find(item => item.name.toLowerCase() === value.name.toLowerCase())
         if (channelExist) {
-            form.setFieldError('name', 'Такой канал уже существует')
+            form.setFieldError('name', t('renameChannelModal.mistake.alreadyExist'))
             return
         }
         try {
@@ -48,6 +50,7 @@ export default function ModalRenameChannelWindow() {
                 form.reset()
         }
         catch (error) {
+            form.setFieldError('name', t('renameChannelModal.mistake.smthWrong')) 
             console.log(error)
         }
     }
@@ -56,7 +59,7 @@ export default function ModalRenameChannelWindow() {
         <div className={styles.modalContainer}>
             <form onSubmit={form.onSubmit(handleSubmit)}>
                 <div className={styles.modalHead}>
-                    <h3 className={styles.modalHeader}>Переименовать канал?</h3>
+                    <h3 className={styles.modalHeader}>{t('renameChannelModal.header')}</h3>
                     <button type="button" onClick={handleCancel} className={styles.closeButton}>
                         <img src="/close.png" className={styles.closeButtonIcon}/>
                     </button>
@@ -69,11 +72,15 @@ export default function ModalRenameChannelWindow() {
                             error: styles.inputError 
                         }
                     }
-                    label="Новое имя канала" 
+                    label={t('renameChannelModal.nameInput')} 
                 />
                 <div className={styles.flexButtonContainer}>
-                    <button type="button" onClick={handleCancel} className={styles.button}>Отменить</button>
-                    <button type="submit" className={styles.sendButton}>Отправить</button>
+                    <button type="button" onClick={handleCancel} className={styles.button}>
+                        {t('renameChannelModal.cancelButton')}
+                    </button>
+                    <button type="submit" className={styles.sendButton}>
+                        {t('renameChannelModal.submitButton')}
+                    </button>
                 </div>
             </form>
         </div>
