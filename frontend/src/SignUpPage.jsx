@@ -1,4 +1,4 @@
-import { Button, TextInput } from '@mantine/core'
+import { TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router'
@@ -95,9 +95,9 @@ export default function SignUpPage () {
                                         }
                         />
                     </div>
-                    <Button type="submit" className={styles.submitButton}>
+                    <button type="submit" className={styles.submitButton}>
                         {t('signUpPage.submitButton')}
-                    </Button>
+                    </button>
                 </form>
             </div>
             <div>

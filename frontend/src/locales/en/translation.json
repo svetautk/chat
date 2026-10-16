@@ -73,5 +73,11 @@
             "alreadyExist": "This channel already exists",
             "smthWrong": "Something went wrong"
         }
+    },
+
+    "notifications": {
+        "createChannel": "Channel has been created",
+        "renameChannel": "Channel has been renamed",
+        "removeChannel": "Channel has been removed"
     }
 }

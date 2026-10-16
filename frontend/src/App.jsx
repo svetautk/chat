@@ -8,6 +8,7 @@ import NotFoundPage from './NotFoundPage.jsx'
 import LoginPage from './LoginPage.jsx'
 import SignUpPage from './SignUpPage.jsx'
 import { MantineProvider } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
 import Layout from './Layout.jsx'
 
 const queryClient = new QueryClient()
@@ -15,6 +16,7 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <MantineProvider>
+      <Notifications/>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>

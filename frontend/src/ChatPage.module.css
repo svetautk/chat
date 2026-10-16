@@ -35,16 +35,11 @@
     background-color: var(--bg);
     border-radius: 10px;
     border: 1px solid var(--border);
-    box-shadow: var(--shadow);
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 0;
     padding: 3px 9px 4px;
     transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.plusButton:hover {
-    background-color: rgba(204, 182, 247, 0.523);
 }
 
 .plusButton:active {

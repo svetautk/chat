@@ -32,11 +32,19 @@ export default function Layout() {
         }
     }
 
+    const renderLangButton = () => {
+        if (currentLang === 'en') {
+            return 'ru'
+        } else {
+            return 'en'
+        }
+    }
+
     return (
         <>
             <div className={styles.containerLngButton}>
                 <button onClick={handleChangeLanguage} className={styles.changeLngButton}>
-                    {currentLang}
+                    {renderLangButton()}
                 </button>
             </div>
             <header className={styles.header}>

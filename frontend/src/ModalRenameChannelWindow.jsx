@@ -1,5 +1,6 @@
-import { Button, TextInput } from "@mantine/core";
+import { TextInput } from "@mantine/core";
 import { useForm } from '@mantine/form'
+import { notifications } from '@mantine/notifications'
 import useAppStore from './store'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
@@ -48,6 +49,10 @@ export default function ModalRenameChannelWindow() {
                 setActiveChannel(response.data)
                 setActiveModal(null)
                 form.reset()
+                notifications.show({
+                    message: t('notifications.renameChannel'),
+                    autoClose: 4000,
+                })
         }
         catch (error) {
             form.setFieldError('name', t('renameChannelModal.mistake.smthWrong')) 

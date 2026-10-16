@@ -3,11 +3,22 @@
     justify-content: end;
 }
 
+.changeLngButton {
+    background-color: var(--accent);
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px 15px 50px;
+    padding: 0 50px 15px 50px;
     border-bottom: 2px solid var(--border);
     color: var(--text-h);
 }
@@ -19,15 +30,6 @@
     font-weight: 500;
     text-decoration: none;
 }
-
-.buttonContainer {
-    display: flex;
-    gap: 20px;
-}
-
-/* .changeLngButton {
-    align-self: flex-start;
-} */
 
 .logOutButton {
     display: flex;

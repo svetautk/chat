@@ -1,5 +1,4 @@
 import { useForm } from '@mantine/form'
-import { Button } from '@mantine/core'
 import axios from 'axios'
 import { useTranslation } from "react-i18next"
 import useAppStore from './store'
@@ -36,9 +35,9 @@ export default function MessageForm() {
         <form onSubmit={form.onSubmit(handleSubmit)} className={styles.form}>
             <textarea {...form.getInputProps('message')} placeholder={t('chatPage.writeMessage')}
                 required rows="1" className={styles.textarea}/>
-            <Button type="submit" className={styles.button} aria-label={t('chatPage.sendMessageButton')}>
+            <button type="submit" className={styles.button} aria-label={t('chatPage.sendMessageButton')}>
                 <img src='/icon_sending_message.png' className={styles.img}/>
-            </Button>
+            </button>
         </form>
     )
 }

@@ -1,4 +1,5 @@
 import { TextInput } from "@mantine/core";
+import { notifications } from '@mantine/notifications'
 import { useForm } from '@mantine/form'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from "react-i18next"
@@ -47,6 +48,10 @@ export default function ModalAddChannelWindow() {
                 setActiveChannel(response.data)
                 setActiveModal(null)
                 form.reset()
+                notifications.show({
+                    message: t('notifications.createChannel'),
+                    autoClose: 4000,
+                })
         }
         catch (error) {
             form.setFieldError('name', t('addChannelModal.mistake.smthWrong')) 
@@ -73,8 +78,12 @@ export default function ModalAddChannelWindow() {
                     label={t('addChannelModal.nameInput')} 
                 />
                 <div className={styles.flexButtonContainer}>
-                    <button type="button" onClick={handleCancel} className={styles.button}>{t('addChannelModal.cancelButton')}</button>
-                    <button type="submit" className={styles.sendButton}>{t('addChannelModal.submitButton')}</button>
+                    <button type="button" onClick={handleCancel} className={styles.button}>
+                        {t('addChannelModal.cancelButton')}
+                    </button>
+                    <button type="submit" className={styles.sendButton}>
+                        {t('addChannelModal.submitButton')}
+                    </button>
                 </div>
             </form>
         </div>

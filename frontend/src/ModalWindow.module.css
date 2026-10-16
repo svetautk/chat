@@ -14,7 +14,7 @@
     background-color: #fefcff;
     width: 100%;
     max-width: 400px;
-    max-height: 200px;
+    max-height: 300px;
     border: 1px solid var(--border);
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -74,7 +74,7 @@
 }
 
 .flexButtonContainer {
-    margin-top: 13px;
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
     gap: 10px;

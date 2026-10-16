@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useTranslation } from "react-i18next"
+import { notifications } from '@mantine/notifications'
 import styles from './ModalWindow.module.css'
 
 export default function ModalDeleteChannelWindow() {
@@ -37,6 +38,10 @@ export default function ModalDeleteChannelWindow() {
                 headers: { Authorization: `Bearer ${token}`,},})
                 setActiveChannel(channels[0])
                 setActiveModal(null)
+                notifications.show({
+                    message: t('notifications.removeChannel'),
+                    autoClose: 4000,
+                })
         }
         catch (error) {
             console.log(error) //надо что-то показать пользователю?

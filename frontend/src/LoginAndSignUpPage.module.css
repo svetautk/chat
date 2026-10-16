@@ -1,8 +1,8 @@
 .box {
     margin: auto;
     width: 90%;
-    max-width: 650px;
-    max-height: 400px;
+    max-width: 700px;
+    max-height: 500px;
     border: 1px solid var(--border);
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -45,7 +45,7 @@
 
 .inputLabel {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 .input {
@@ -55,7 +55,7 @@
     border-radius: 10px;
     padding: 7px;
     font-family: var(--sans);
-    font-size: 14px;
+    font-size: 14px !important;
     transition: border-color 0.2s;
 }
 
@@ -66,7 +66,7 @@
 
 .submitButton {
     box-sizing: border-box;
-    width: 95%;
+    width: 100%;
     margin: 20px 0 15px;
     background-color: var(--bg);
     border-radius: 10px;
