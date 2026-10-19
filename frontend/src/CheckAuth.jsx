@@ -1,13 +1,13 @@
 import { Navigate } from "react-router"
+import useAppStore from './store'
 import ChatPage from './ChatPage.jsx'
 
 
 function CheckAuth() {
-    const appStore = JSON.parse(localStorage.getItem('appStore'))
+    const token = useAppStore(state => state.userData?.token)
 
     return (
-        appStore && appStore?.state?.userData?.token ? <ChatPage/> : <Navigate to='/login'/>
-        /* есть ситуация когда в сторе лежит устаревший токен */
+        token ? <ChatPage/> : <Navigate to='/login'/>
     ) 
 }
 

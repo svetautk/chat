@@ -16,9 +16,9 @@ export default function Layout() {
     const { t, i18n } = useTranslation()
 
     const handleLogOut = () => {
-        queryClient.clear()
         navigate('/login')
         addUserData(null)
+        queryClient.clear()
         setActiveChannel({ id: '1', name: 'general', removable: false, })
     }
 

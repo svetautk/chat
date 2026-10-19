@@ -5,6 +5,7 @@ import './i18n.js'
 import '@mantine/core/styles.css'
 import '@mantine/notifications/styles.css'
 import './index.css'
+import './axiosSetup.js'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

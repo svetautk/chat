@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
-import {
-  QueryClient,
-  QueryClientProvider
-} from '@tanstack/react-query'
+import { QueryClientProvider } from '@tanstack/react-query'
+import queryClient from './queryClient.js'
 import CheckAuth from './CheckAuth.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
 import LoginPage from './LoginPage.jsx'
@@ -10,8 +8,6 @@ import SignUpPage from './SignUpPage.jsx'
 import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 import Layout from './Layout.jsx'
-
-const queryClient = new QueryClient()
 
 function App() {
   return (
