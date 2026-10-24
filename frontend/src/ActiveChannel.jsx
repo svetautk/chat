@@ -43,21 +43,37 @@ export default function ActiveChannel( {item} ) {
     }
 
     const renderDropDownMenu = () => {
-        if (item.removable && isMenuOpen) {
-            return (<ul ref={menuRef} className={styles.dropDownMenu}>
-                        <li>
-                            <button onClick={openModalRenameChannel} className={styles.menuItem}>
-                                {t('chatPage.activeChannelMenu.renameButton')}
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={openModalDeleteChannel} className={styles.menuItem}>
-                                {t('chatPage.activeChannelMenu.removeButton')}
-                            </button>
-                        </li>
-                    </ul>)
+        if (!item.removable || !isMenuOpen) {
+            return null
         }
-        return null
+
+        return (<ul ref={menuRef} className={styles.dropDownMenu}>
+            <li>
+                <button onClick={openModalRenameChannel} className={styles.menuItem}>
+                    {t('chatPage.activeChannelMenu.renameButton')}
+                </button>
+            </li>
+            <li>
+                <button onClick={openModalDeleteChannel} className={styles.menuItem}>
+                    {t('chatPage.activeChannelMenu.removeButton')}
+                </button>
+            </li>
+        </ul>)
+        // if (item.removable && isMenuOpen) {
+        //     return (<ul ref={menuRef} className={styles.dropDownMenu}>
+        //                 <li>
+        //                     <button onClick={openModalRenameChannel} className={styles.menuItem}>
+        //                         {t('chatPage.activeChannelMenu.renameButton')}
+        //                     </button>
+        //                 </li>
+        //                 <li>
+        //                     <button onClick={openModalDeleteChannel} className={styles.menuItem}>
+        //                         {t('chatPage.activeChannelMenu.removeButton')}
+        //                     </button>
+        //                 </li>
+        //             </ul>)
+        // }
+        // return null
     }
 
     return (

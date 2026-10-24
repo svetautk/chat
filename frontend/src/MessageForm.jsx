@@ -22,6 +22,7 @@ export default function MessageForm() {
             form.reset()
         }
         catch (error) {
+            // тут бы хорошо бы смотреть респонз из post
             if (axios.response) {
                 if (axios.isAxiosError(error) && error.response.status >= 400) {
                     form.setErrors('message', 'Сообщение не отправлено')
